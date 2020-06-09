@@ -14,7 +14,7 @@ namespace BurningRiverSoftworks.HomeAutomation.Services
         private readonly ILogger<GreeterService> _logger;
         public GreeterService(ILogger<GreeterService> logger)
         {
-            _logger = logger;
+            _logger = logger; //terst
         }
 
         public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)

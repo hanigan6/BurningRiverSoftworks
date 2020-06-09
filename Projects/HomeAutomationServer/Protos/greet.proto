@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option csharp_namespace = "HomeAutomationServer";
+option csharp_namespace = "BurningRiverSoftworks.HomeAutomation.Protos.Sample";
 
 package greet;
 

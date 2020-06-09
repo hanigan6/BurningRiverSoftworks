@@ -4,8 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Grpc.Core;
 using Microsoft.Extensions.Logging;
+using BurningRiverSoftworks.HomeAutomation.Protos.Sample;
 
-namespace HomeAutomationServer
+namespace BurningRiverSoftworks.HomeAutomation.Services
 {
     //Testing Github
     public class GreeterService : Greeter.GreeterBase

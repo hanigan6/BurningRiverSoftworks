@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option csharp_namespace = "BurningRiverSoftworks.Auth.Authentication";
+
+package authentication;
+
+service Authentication{
+    rpc IsAuthenticated (UserData) returns (AuthenticationResponse);
+}
+
+message UserData{
+    string id = 1;
+    string token = 2;
+}
+
+message AuthenticationResponse{
+    bool is_authenticated = 1;
+}

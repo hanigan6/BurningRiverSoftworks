@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option csharp_namespace = "BurningRiverSoftworks.Definitions.Location";
+
+package location;
+
+service LocationProvider{
+    rpc StreamCurrentLocation(stream CurrentLocation) returns (LocationValidator);
+}
+
+message CurrentLocation {
+    string id = 1;
+    string time_stamp = 2;
+    string location_data = 3;
+}
+
+message LocationValidator{
+    string id = 1;
+    bool isValid = 2;
+}

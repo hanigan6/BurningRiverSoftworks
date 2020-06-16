@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+option csharp_namespace = "BurningRiverSoftworks.Definitions.Auth";
+
+package auth;
+
+service AuthProvider{
+    rpc ConnectionAccessToken (UserClaims) returns (TokenResponse);
+    rpc IsAuthenticated (UserData) returns (AuthenticationResponse);
+    rpc IsAuthorized (UserData) returns (AuthorizationResponse);
+}
+
+/***Requests***/
+message UserClaims{
+    string grant_type = 1;
+    string scope = 2;
+    string client_id = 3;
+    string client_secret = 4;
+}
+message UserData{
+    string id = 1;
+    string token = 2;
+}
+
+/***Responses***/
+message TokenResponse{
+    string access_token = 1;
+    int32 expires_in = 2;
+    string token_type = 3;
+}
+message AuthenticationResponse{
+    bool is_authenticated = 1;
+}
+
+message AuthorizationResponse{
+    bool Authorized = 1;
+}
